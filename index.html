@@ -1,161 +1,218 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KI-Risiko-Check: Vier Perspektiven auf KI und Berufe">
-  <title>KI & Beruf – Vier Perspektiven</title>
+  <meta name="description" content="KI-Risiko-Check: Zwei Perspektiven auf KI und Berufe">
+  <title>KI & Beruf – Zwei Perspektiven</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="topline">
-      <div class="brand">Digital Impact Lab · KI & Beruf</div>
-      <div class="tag">Interaktive Lernstation</div>
+  <div class="landing-screen" id="landing-screen">
+    <div class="landing-card">
+      <p class="eyebrow">Willkommen</p>
+      <h1>Probier aus, wie KI Berufe verändern könnte</h1>
+      <p class="intro">Nimm dir 10 bis 15 Minuten Zeit, probiere beide Tools selbst aus und finde heraus, wie sie Berufe und Tätigkeiten einschätzen.</p>
+
+      <div class="landing-points">
+        <div>Probiere beide Tools selbst aus</div>
+        <div>Achte darauf, welche Tätigkeiten betroffen sind</div>
+        <div>Vergleiche anschließend die Ergebnisse</div>
+      </div>
+
+      <button class="primary" id="enter-tools" type="button">Weiter</button>
     </div>
+  </div>
 
-    <h1>Wie verändert KI die Berufswelt?</h1>
+  <div class="tool-page hidden" id="tool-page">
+    <header class="hero">
+      <div class="topline">
+        <div class="brand">Digital Impact Lab · KI & Beruf</div>
+        <div class="tag">Interaktive Lernstation</div>
+      </div>
 
-    <p class="intro">
-      Vier Online-Tools, vier Blickwinkel. Vergleiche, welche Tätigkeiten
-      von künstlicher Intelligenz verändert oder übernommen werden könnten
-      und welche menschlichen Fähigkeiten weiterhin wichtig bleiben.
-    </p>
-  </header>
+      <div class="welcome-wrap">
+        <div class="welcome-copy">
+          <p class="eyebrow">Übersicht</p>
+          <h2>Wie verändert KI die Berufswelt?</h2>
+          <p class="intro">Nimm dir 10 bis 15 Minuten Zeit, probiere beide Tools selbst aus und finde heraus, wie sie Berufe und Tätigkeiten einschätzen.</p>
+        </div>
+      </div>
+    </header>
 
-  <main>
-    <div class="section-head">
-      <h2>Vier Tools im direkten Vergleich</h2>
-      <p>Alle vier Bereiche sind gleichzeitig auf dieser Seite angeordnet.</p>
-    </div>
+    <main id="tools">
+      <div class="section-head">
+        <h2>Zwei Tools im direkten Vergleich</h2>
+        <p>Beide Bereiche sind gleichzeitig auf dieser Seite angeordnet.</p>
+      </div>
 
-    <section class="grid">
-      <article class="tool">
-        <div class="tool-head">
-          <div>
-            <div class="tool-num">TOOL 01</div>
-            <h3>Job-Futuromat</h3>
-            <p class="desc">
-              Untersucht einzelne Tätigkeiten eines Berufs und zeigt, welche
-              technisch automatisierbar sind.
-            </p>
+      <section class="phase-banner" aria-label="Recherche-Phase">
+        <p class="eyebrow">Phase 2 · Recherche</p>
+        <h2>Probiere beide Tools 10–15 Minuten lang selbst aus.</h2>
+        <p>Untersuche möglichst denselben Beruf in beiden Tools. Notiere, welche Tätigkeiten oder Fähigkeiten genannt werden und wie die Einschätzungen ausfallen.</p>
+      </section>
+      <section class="grid two-cols">
+<article class="tool">
+          <div class="tool-head">
+            <div>
+              <div class="tool-num">TOOL 01</div>
+              <h3>Ersetzt KI meinen Job?</h3>
+              <p class="desc">
+                Prüft, wie stark einzelne Berufe und Fähigkeiten von KI betroffen sein könnten.
+              </p>
+            </div>
+            <span class="pill">Berufsrisiko prüfen</span>
           </div>
-          <span class="pill">Beruf analysieren</span>
-        </div>
 
-        <div class="frame-wrap">
-          <iframe
-            src="https://job-futuromat.iab.de/"
-            title="Job-Futuromat"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <div class="tool-foot">
-          <span class="hint">Einfaches Tool zur Einschätzung einzelner Aufgaben.</span>
-          <a class="open" href="https://job-futuromat.iab.de/" target="_blank" rel="noopener noreferrer">
-            Tool öffnen
-          </a>
-        </div>
-      </article>
-
-      <article class="tool">
-        <div class="tool-head">
-          <div>
-            <div class="tool-num">TOOL 02</div>
-            <h3>KI Job-Kompass Deutschland</h3>
-            <p class="desc">
-              Vergleicht die KI-Exposition verschiedener Berufsgruppen in Deutschland.
-            </p>
+          <div class="frame-wrap">
+            <iframe
+              src="https://ersetzt-ki-meinen-job.de/"
+              title="Ersetzt KI meinen Job?"
+              loading="lazy">
+            </iframe>
           </div>
-          <span class="pill">Berufe vergleichen</span>
-        </div>
 
-        <div class="frame-wrap">
-          <iframe
-            src="https://jobkompass.bewegt.ai/"
-            title="KI Job-Kompass Deutschland"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <div class="tool-foot">
-          <span class="hint">Falls die Einbettung blockiert wird, nutze den Direktlink.</span>
-          <a class="open" href="https://jobkompass.bewegt.ai/" target="_blank" rel="noopener noreferrer">
-            Tool öffnen
-          </a>
-        </div>
-      </article>
-
-      <article class="tool">
-        <div class="tool-head">
-          <div>
-            <div class="tool-num">TOOL 03</div>
-            <h3>KI-Risiko-Check</h3>
-            <p class="desc">
-              Selbsteinschätzung: Wie stark ist dein persönliches Tätigkeitsprofil
-              von KI betroffen?
-            </p>
+          <div class="tool-foot">
+            <span class="hint">Die Einschätzung ist eine Orientierung, keine sichere Vorhersage.</span>
+            <a class="open" href="https://ersetzt-ki-meinen-job.de/" target="_blank" rel="noopener noreferrer">
+              Tool öffnen
+            </a>
           </div>
-          <span class="pill">Selbst einschätzen</span>
-        </div>
+        </article>
 
-        <div class="frame-wrap">
-          <iframe
-            src="https://www.profiling-institut.de/ki-und-beruf/ki-risiko-check/"
-            title="KI-Risiko-Check"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <div class="tool-foot">
-          <span class="hint">Persönliche Orientierung, keine sichere Prognose.</span>
-          <a class="open" href="https://www.profiling-institut.de/ki-und-beruf/ki-risiko-check/" target="_blank" rel="noopener noreferrer">
-            Tool öffnen
-          </a>
-        </div>
-      </article>
-
-      <article class="tool">
-        <div class="tool-head">
-          <div>
-            <div class="tool-num">TOOL 04</div>
-            <h3>Sicher-KI Jobcheck</h3>
-            <p class="desc">
-              Zerlegt einen Beruf in typische Aufgaben und bewertet deren Automatisierbarkeit.
-            </p>
+        <article class="tool">
+          <div class="tool-head">
+            <div>
+              <div class="tool-num">TOOL 02</div>
+              <h3>KI Job-Kompass Deutschland</h3>
+              <p class="desc">
+                Vergleicht die KI-Exposition verschiedener Berufsgruppen in Deutschland.
+              </p>
+            </div>
+            <span class="pill">Berufe vergleichen</span>
           </div>
-          <span class="pill">Aufgaben analysieren</span>
+
+          <div class="frame-wrap">
+            <iframe
+              src="https://jobkompass.bewegt.ai/"
+              title="KI Job-Kompass Deutschland"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="tool-foot">
+            <span class="hint">Vergleicht Berufe direkt im eingebetteten Jobkompass.</span>
+            <a class="open" href="https://jobkompass.bewegt.ai/" target="_blank" rel="noopener noreferrer">
+              Tool öffnen
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <aside class="note">
+        <strong>Wichtig für die Auswertung:</strong>
+        Ein hoher KI-Wert bedeutet nicht automatisch, dass ein ganzer Beruf verschwindet.
+        Häufig werden einzelne Aufgaben automatisiert oder durch KI unterstützt. Die beiden Tools
+        nutzen unterschiedliche Methoden. Ihre Ergebnisse sind deshalb nicht direkt gleichzusetzen.
+      </aside>
+
+      <section class="confirm-step" aria-labelledby="confirm-title">
+        <h2 id="confirm-title">Fertig mit den Tools?</h2>
+        <label class="confirm-label" for="task-complete">
+          <input class="confirm-checkbox" id="task-complete" type="checkbox">
+          <span>Ich habe beide Tools ausprobiert und möchte meine Ergebnisse vergleichen.</span>
+        </label>
+        <button class="primary" id="go-to-evaluation" type="button" disabled>Weiter zur Auswertung</button>
+      </section>
+    </main>
+
+    <footer>
+      Externe Online-Angebote · Inhalte und Bewertungen stammen von den jeweiligen Anbietern.
+    </footer>
+  </div>
+
+  <div class="tool-page hidden" id="evaluation-screen">
+    <header class="hero">
+      <div class="topline">
+        <div class="brand">Digital Impact Lab · KI & Beruf</div>
+        <div class="tag">Auswertung</div>
+      </div>
+      <h1>Deine Auswertung</h1>
+      <p class="intro">Nimm dir 10 bis 15 Minuten Zeit, probiere beide Tools selbst aus und finde heraus, wie sie Berufe und Tätigkeiten einschätzen.</p>
+    </header>
+        <main>
+      <section class="results-entry" aria-labelledby="results-title">
+        <h2 id="results-title">Phase 3 · Ergebnisse vergleichen</h2>
+        <p>Trage die Ergebnisse für denselben Beruf aus beiden Tools ein.</p>
+        <div class="result-fields">
+          <label for="result-tool-one">Ergebnis „Ersetzt KI meinen Job?“</label>
+          <textarea id="result-tool-one" rows="4" placeholder="Welche Einschätzung und Begründung zeigt das Tool?"></textarea>
+          <label for="result-tool-two">Ergebnis „KI Job-Kompass Deutschland“</label>
+          <textarea id="result-tool-two" rows="4" placeholder="Welche Einschätzung zeigt der Jobkompass?"></textarea>
         </div>
+        <label class="reflection-label" for="result-comparison">Was ist ähnlich, was unterscheidet sich? Welche Gründe könnte es für die Unterschiede geben?</label>
+        <textarea id="result-comparison" rows="4" placeholder="Vergleiche die Ergebnisse und hinterfrage die Bewertungsmethoden."></textarea>
+        <button class="primary" id="show-conclusion" type="button" disabled>Weiter zum Fazit</button>
+      </section>
 
-        <div class="frame-wrap">
-          <iframe
-            src="https://sicher-ki.de/ki-jobcheck"
-            title="Sicher-KI Jobcheck"
-            loading="lazy">
-          </iframe>
-        </div>
+      <section class="conclusion hidden" id="conclusion" aria-labelledby="conclusion-title">
+        <p class="eyebrow">Phase 4 · Fazit</p>
+        <h2 id="conclusion-title">Ein Beruf besteht aus vielen verschiedenen Tätigkeiten.</h2>
+        <p>KI kann einzelne Aufgaben verändern oder automatisieren, ohne dass gleich der ganze Beruf wegfällt. Verschiedene Tools können zu unterschiedlichen Einschätzungen kommen, weil sie Berufe und Tätigkeiten mit unterschiedlichen Methoden bewerten. Deshalb lohnt es sich, Ergebnisse zu vergleichen und kritisch zu hinterfragen.</p>
+        <h3>Das nimmst du mit</h3>
+        <ul>
+          <li>Unterscheide zwischen der Automatisierung einzelner Tätigkeiten und dem Wegfall eines ganzen Berufs.</li>
+          <li>Vergleiche Ergebnisse verschiedener Bewertungsmethoden und frage, wie sie zustande kommen.</li>
+          <li>Verstehe KI-Einschätzungen als Orientierung, nicht als sichere Vorhersage.</li>
+        </ul>
+      </section>
+      <button class="primary" id="back-to-tools" type="button">Zurück zu den Tools</button>
+    </main>
+  </div>
+  <script>
+    const landingScreen = document.getElementById('landing-screen');
+    const toolPage = document.getElementById('tool-page');
+    const enterTools = document.getElementById('enter-tools');
+    const taskComplete = document.getElementById('task-complete');
+    const goToEvaluation = document.getElementById('go-to-evaluation');
+    const evaluationScreen = document.getElementById('evaluation-screen');
+    const backToTools = document.getElementById('back-to-tools');
+    const resultInputs = ['result-tool-one', 'result-tool-two', 'result-comparison'].map(id => document.getElementById(id));
+    const showConclusion = document.getElementById('show-conclusion');
+    const conclusion = document.getElementById('conclusion');
 
-        <div class="tool-foot">
-          <span class="hint">Bewertet einzelne Tätigkeiten statt nur den Berufstitel.</span>
-          <a class="open" href="https://sicher-ki.de/ki-jobcheck" target="_blank" rel="noopener noreferrer">
-            Tool öffnen
-          </a>
-        </div>
-      </article>
-    </section>
+    enterTools.addEventListener('click', () => {
+      landingScreen.classList.add('hidden');
+      toolPage.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-    <aside class="note">
-      <strong>Wichtig für die Auswertung:</strong>
-      Ein hoher KI-Wert bedeutet nicht automatisch, dass ein ganzer Beruf verschwindet.
-      Häufig werden einzelne Aufgaben automatisiert oder durch KI unterstützt. Die vier Tools
-      nutzen unterschiedliche Methoden. Ihre Ergebnisse sind deshalb nicht direkt gleichzusetzen.
-    </aside>
-  </main>
+    taskComplete.addEventListener('change', () => {
+      goToEvaluation.disabled = !taskComplete.checked;
+    });
 
-  <footer>
-    Externe Online-Angebote · Inhalte und Bewertungen stammen von den jeweiligen Anbietern.
-  </footer>
+    goToEvaluation.addEventListener('click', () => {
+      toolPage.classList.add('hidden');
+      evaluationScreen.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    resultInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        showConclusion.disabled = !resultInputs.every(field => field.value.trim().length > 0);
+      });
+    });
+
+    showConclusion.addEventListener('click', () => {
+      document.querySelector('.results-entry').classList.add('hidden');
+      conclusion.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    backToTools.addEventListener('click', () => {
+      evaluationScreen.classList.add('hidden');
+      toolPage.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
