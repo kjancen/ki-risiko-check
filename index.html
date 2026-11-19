@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="site-masthead"><a class="brand" href="https://impact-lab.eu/" target="_blank" rel="noopener noreferrer" aria-label="Digital Impact Lab – Website öffnen"><img src="assets/dil-logo.png" alt="Digital Impact Lab" width="108" height="108"><span>KI &amp; Beruf<small>Interaktive Lernstation</small></span></a><span class="station-label">Entdecken. Ausprobieren. Verstehen.</span></div>
   <div class="landing-screen" id="landing-screen">
     <div class="landing-card">
-      <p class="eyebrow">Willkommen</p>
+      <p class="eyebrow">Phase 1 · Entdecken</p>
       <h1>Probier aus, wie KI Berufe verändern könnte</h1>
       <p class="intro">Nimm dir 10 bis 15 Minuten Zeit, probiere beide Tools selbst aus und finde heraus, wie sie Berufe und Tätigkeiten einschätzen.</p>
 
@@ -20,14 +21,14 @@
         <div>Vergleiche anschließend die Ergebnisse</div>
       </div>
 
-      <button class="primary" id="enter-tools" type="button">Weiter</button>
+      <button class="primary" id="enter-tools" type="button">Jetzt ausprobieren <span aria-hidden="true">↗</span></button>
     </div>
   </div>
 
   <div class="tool-page hidden" id="tool-page">
     <header class="hero">
       <div class="topline">
-        <div class="brand">Digital Impact Lab · KI & Beruf</div>
+        <div class="section-brand">KI &amp; Beruf</div>
         <div class="tag">Interaktive Lernstation</div>
       </div>
 
@@ -43,7 +44,7 @@
     <main id="tools">
       <div class="section-head">
         <h2>Zwei Tools im direkten Vergleich</h2>
-        <p>Beide Bereiche sind gleichzeitig auf dieser Seite angeordnet.</p>
+        <p>Ein Beruf. Zwei Perspektiven. Deine Einsch?tzung.</p>
       </div>
 
       <section class="phase-banner" aria-label="Recherche-Phase">
@@ -126,15 +127,12 @@
       </section>
     </main>
 
-    <footer>
-      Externe Online-Angebote · Inhalte und Bewertungen stammen von den jeweiligen Anbietern.
-    </footer>
   </div>
 
   <div class="tool-page hidden" id="evaluation-screen">
     <header class="hero">
       <div class="topline">
-        <div class="brand">Digital Impact Lab · KI & Beruf</div>
+        <div class="section-brand">KI &amp; Beruf</div>
         <div class="tag">Auswertung</div>
       </div>
       <h1>Deine Auswertung</h1>
@@ -169,6 +167,15 @@
       <button class="primary" id="back-to-tools" type="button">Zurück zu den Tools</button>
     </main>
   </div>
+  <footer class="site-footer">
+    <div class="partner-heading"><p class="eyebrow">Gemeinsam möglich gemacht</p><span>Partner &amp; Förderung</span></div>
+    <div class="partner-logos" aria-label="Partner und Förderung">
+      <img class="partner-eu" src="assets/eu-kofinanzierung.png" alt="Kofinanziert von der Europäischen Union" width="1024" height="215">
+      <img class="partner-bremen" src="assets/bremen.svg" alt="Freie Hansestadt Bremen" width="223" height="80">
+      <img class="partner-m2c" src="assets/m2c.svg" alt="m2c – Institut für angewandte Medienforschung" width="206" height="80">
+    </div>
+    <div class="footer-bottom"><span>Externe Online-Angebote · Inhalte und Bewertungen stammen von den jeweiligen Anbietern.</span><a href="https://impact-lab.eu/" target="_blank" rel="noopener noreferrer">Digital Impact Lab ↗</a></div>
+  </footer>
   <script>
     const landingScreen = document.getElementById('landing-screen');
     const toolPage = document.getElementById('tool-page');
