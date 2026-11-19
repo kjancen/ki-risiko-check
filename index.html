@@ -151,6 +151,7 @@
         <label class="reflection-label" for="result-comparison">Was ist ähnlich, was unterscheidet sich? Welche Gründe könnte es für die Unterschiede geben?</label>
         <textarea id="result-comparison" rows="4" placeholder="Vergleiche die Ergebnisse und hinterfrage die Bewertungsmethoden."></textarea>
         <button class="primary" id="show-conclusion" type="button" disabled>Weiter zum Fazit</button>
+        <button class="primary" id="back-to-tools" type="button">Zurück zu den Tools</button>
       </section>
 
       <section class="conclusion hidden" id="conclusion" aria-labelledby="conclusion-title">
@@ -163,8 +164,8 @@
           <li>Vergleiche Ergebnisse verschiedener Bewertungsmethoden und frage, wie sie zustande kommen.</li>
           <li>Verstehe KI-Einschätzungen als Orientierung, nicht als sichere Vorhersage.</li>
         </ul>
+        <button class="primary" id="back-to-start" type="button">Zurück zum Anfang</button>
       </section>
-      <button class="primary" id="back-to-tools" type="button">Zurück zu den Tools</button>
     </main>
   </div>
   <footer class="site-footer">
@@ -176,6 +177,11 @@
     </div>
     <div class="footer-bottom"><span>Externe Online-Angebote · Inhalte und Bewertungen stammen von den jeweiligen Anbietern.</span><a href="https://impact-lab.eu/" target="_blank" rel="noopener noreferrer">Digital Impact Lab ↗</a></div>
   </footer>
+  <dialog id="idle-dialog" aria-labelledby="idle-title" aria-describedby="idle-message">
+    <h2 id="idle-title">Möchtest du weitermachen?</h2>
+    <p id="idle-message">Du warst eine Minute inaktiv. Drücke innerhalb von <span id="idle-countdown">10</span> Sekunden auf „Weiter machen“. Sonst kommst du zurück zum Anfang.</p>
+    <button class="primary" id="resume-session" type="button">Weiter machen</button>
+  </dialog>
   <script>
     const landingScreen = document.getElementById('landing-screen');
     const toolPage = document.getElementById('tool-page');
@@ -184,14 +190,21 @@
     const goToEvaluation = document.getElementById('go-to-evaluation');
     const evaluationScreen = document.getElementById('evaluation-screen');
     const backToTools = document.getElementById('back-to-tools');
+    const backToStart = document.getElementById('back-to-start');
     const resultInputs = ['result-tool-one', 'result-tool-two', 'result-comparison'].map(id => document.getElementById(id));
     const showConclusion = document.getElementById('show-conclusion');
     const conclusion = document.getElementById('conclusion');
+    const idleDialog = document.getElementById('idle-dialog');
+    const idleCountdown = document.getElementById('idle-countdown');
+    const resumeSession = document.getElementById('resume-session');
+    let inactivityTimeout;
+    let countdownInterval;
 
     enterTools.addEventListener('click', () => {
       landingScreen.classList.add('hidden');
       toolPage.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      startInactivityTimer();
     });
 
     taskComplete.addEventListener('change', () => {
@@ -215,11 +228,87 @@
       conclusion.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
     backToTools.addEventListener('click', () => {
       evaluationScreen.classList.add('hidden');
       toolPage.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    function clearInactivityTimers() {
+      window.clearTimeout(inactivityTimeout);
+      window.clearInterval(countdownInterval);
+    }
+
+    function resetToStart() {
+      clearInactivityTimers();
+      if (idleDialog.open) {
+        idleDialog.close();
+      }
+      evaluationScreen.classList.add('hidden');
+      toolPage.classList.add('hidden');
+      landingScreen.classList.remove('hidden');
+      taskComplete.checked = false;
+      goToEvaluation.disabled = true;
+      resultInputs.forEach(input => {
+        input.value = '';
+      });
+      showConclusion.disabled = true;
+      document.querySelector('.results-entry').classList.remove('hidden');
+      conclusion.classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      enterTools.focus();
+    }
+
+    function startInactivityTimer() {
+      clearInactivityTimers();
+      if (toolPage.classList.contains('hidden') && evaluationScreen.classList.contains('hidden')) {
+        return;
+      }
+
+      inactivityTimeout = window.setTimeout(() => {
+        // Cross-origin iframe activity is not observable; keep the session alive while a tool is focused.
+        if (document.visibilityState === 'visible' && document.activeElement instanceof HTMLIFrameElement) {
+          startInactivityTimer();
+          return;
+        }
+
+        let remainingSeconds = 10;
+        idleCountdown.textContent = remainingSeconds;
+        idleDialog.showModal();
+        resumeSession.focus();
+        countdownInterval = window.setInterval(() => {
+          remainingSeconds -= 1;
+          idleCountdown.textContent = remainingSeconds;
+          if (remainingSeconds <= 0) {
+            resetToStart();
+          }
+        }, 1000);
+      }, 60 * 1000);
+    }
+
+    function registerActivity() {
+      if (!idleDialog.open) {
+        startInactivityTimer();
+      }
+    }
+
+    ['pointerdown', 'pointermove', 'keydown', 'input', 'change'].forEach(eventName => {
+      document.addEventListener(eventName, registerActivity);
+    });
+    window.addEventListener('scroll', registerActivity, { passive: true });
+    document.querySelectorAll('iframe').forEach(frame => {
+      frame.addEventListener('focus', registerActivity);
+    });
+
+    idleDialog.addEventListener('cancel', event => {
+      event.preventDefault();
+    });
+    resumeSession.addEventListener('click', () => {
+      idleDialog.close();
+      startInactivityTimer();
+    });
+    backToStart.addEventListener('click', resetToStart);
   </script>
 </body>
 </html>

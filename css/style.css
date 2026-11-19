@@ -89,3 +89,8 @@ textarea:focus{background:#fff}
 @media(max-width:1240px){.hero{margin-inline:32px}}
 @media(max-width:760px){.site-masthead{padding:16px 20px}.brand{font-size:18px;gap:12px}.brand img{width:90px;height:90px}.station-label{display:none}.landing-screen{padding:32px 20px;min-height:auto}.landing-card{padding:32px 24px}.landing-points{grid-template-columns:1fr;gap:16px;margin:28px 0}.landing-points div{display:flex;align-items:baseline;gap:16px;padding-top:12px}.landing-points div:before{margin:0;font-size:18px}.hero{margin-inline:20px;padding:24px 0 32px}.topline{margin-bottom:24px}main{padding:0 20px 36px}.section-head{display:block}.section-head p{margin-top:8px}.phase-banner,.tool-head,.confirm-step,.results-entry,.conclusion{padding:24px}.tool-head{flex-direction:column;gap:16px}.tool-foot{padding:20px;align-items:flex-start;flex-direction:column;gap:16px}iframe{height:440px}.site-footer{padding:28px 20px 20px}.partner-heading{display:block}.partner-heading span{display:block;margin-top:6px}.partner-logos{flex-wrap:wrap;justify-content:flex-start;gap:28px 32px}.partner-eu{width:280px}.partner-bremen{width:200px}.partner-m2c{width:180px}.footer-bottom{flex-direction:column;gap:12px}h2{font-size:26px;line-height:34px}.intro{font-size:16px;line-height:24px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+#idle-dialog{width:min(520px,calc(100% - 32px));max-width:none;padding:32px;border:1px solid var(--line);border-top:6px solid var(--orange);border-radius:4px;color:var(--ink);background:#fff}
+#idle-dialog::backdrop{background:rgba(23,43,64,.55)}
+#idle-dialog h2{margin-top:0}
+#idle-dialog p{margin:0 0 24px}
+@media(max-width:760px){#idle-dialog{padding:24px}}
